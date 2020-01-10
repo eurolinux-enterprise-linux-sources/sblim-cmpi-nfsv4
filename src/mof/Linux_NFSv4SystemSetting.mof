@@ -1,0 +1,144 @@
+// ---------------------------------------------------------------------------
+// Linux_SystemSetting.mof
+//
+// Copyright (c) IBM Corp. 2004, 2009
+//
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author:	Dr. Gareth S. Bestor <bestorga@us.ibm.com>
+// Description:	Linux_SystemSetting mof template
+// Interface:	Common Manageability Programming Interface (CMPI)
+//
+// IMPORTANT: This file must be renamed to the desired new
+// Linux_SystemSetting instance provider mof; e.g.
+//	mv Linux_SystemSetting.mof Linux_NFSv4SystemSetting.mof
+// Then change all occurances of "Linux_SystemSetting" in this file to,
+// say, "Linux_NFSv4SystemSetting".
+// Then add all of the new class's properties and their CIM types to the 
+// end of this class definition.
+// DO NOT CHANGE ANY OF THE EXISTING PROPERTIES!
+// ---------------------------------------------------------------------------
+
+#pragma locale ("en_US")
+
+[Description
+	("NFSv4 configuration file /etc/exports settings"),
+ Provider("cmpi:Linux_NFSv4SystemSetting") ]
+class Linux_NFSv4SystemSetting : CIM_SystemSetting
+{
+   // Linux_SystemSetting Key Properties 
+
+   [Propagated ("CIM_System.Name"),
+    Key, MaxLen (256),
+    Description
+	("The scoping System's Name.") ]
+   string SystemName;
+
+   [Propagated ("CIM_System.CreationClassName"),
+    Key, MaxLen (256),
+    Description 
+	("The scoping System's CreationClassName.") ]
+   string SystemCreationClassName;
+
+   [Propagated ("CIM_SystemSetting.CreationClassName"),
+    Key, MaxLen (256),
+    Description
+	("CreationClassName indicates the name of the class or the subclass used "
+	 "in the creation of an instance. When used with the other key properties "
+	 "of this class, this property allows all instances of this class and its "
+	 "subclasses to be uniquely identified.") ]
+   string CreationClassName;
+
+   [Propagated ("CIM_SystemSetting.SettingID"),
+    Key, MaxLen (256),
+    Description
+	("The identifier by which the Setting object is known.")]
+   string SettingID;
+
+
+   // Linux_SystemSetting Config File Properties 
+
+   [Propagated ("CIM_LogicalFile.Name"),
+    Description
+	("Name of the actual configuration file storing this setting.") ]
+   string Filename;
+
+   [Propagated ("CIM_LogicalFile.Readable"),
+    Description
+	("Boolean indicating if the configuration file can be read.") ]
+   boolean Readable;
+
+   [Propagated ("CIM_LogicalFile.Writeable"),
+    Description
+	("Boolean indicating if the configuration file can be written.") ]
+   boolean Writeable;
+  
+   
+   // Add Linux_SystemSetting Custom Properties Below... 
+
+   [Description
+	("This is the full pathname of the exported directory.") ]
+   string Directory;
+
+   [Description (
+      "The full pathname that this directory will be mounted to on the client. ") ]
+   string PseudoPath;
+
+   [Description
+        ("Is the exported directory read-write (rw) or read-only (ro) by the client.") ]
+   string Permission = "ro";
+
+   [Description (
+      "Security option - AUTH_NONE RPC security. ") ]
+   boolean Security_none;
+
+   [Description (
+      "Security option - AUTH_SYS, default uid/gid lists. ") ]
+   boolean Security_sys;
+
+   [Description (
+      "Security option - AUTH_DES, old diffe-hellman encryption. ") ]
+   boolean Security_dh;
+
+   [Description (
+      "Security option - RPCSEC_GSS Kerberos 5 authentication. ") ]
+   boolean Security_krb5;
+
+   [Description (
+      "Security option - RPCSEC_GSS Kerberos 5 integrity. ") ]
+   boolean Security_krb5i;
+
+   [Description (
+      "Security option - RPCSEC_GSS Kerberos 5 protection. ") ]
+   boolean Security_krb5p;
+
+   [Description (
+      "Security option - SPKM authentication. ") ]
+   boolean Security_spkm3;
+
+   [Description (
+      "Security option - SPKM integrity. ") ]
+   boolean Security_spkm3i;
+
+   [Description (
+      "Security option - SPKM protection. ") ]
+   boolean Security_spkm3p;
+
+   [Description (
+      "Security option - LIPKEY authentication. ") ]
+   boolean Security_lkey;
+
+   [Description (
+      "Security option - LIPKEY integrity. ") ]
+   boolean Security_lkeyi;
+
+   [Description (
+      "Security option - LIPKEY protection. ") ]
+   boolean Security_lkeyp;
+};
+

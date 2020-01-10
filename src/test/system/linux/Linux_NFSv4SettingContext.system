@@ -1,0 +1,7 @@
+********************************************************************************
+association : Linux_NFSv4SettingContext
+
+--------------------------------------------------------------------------------
+Linux_NFSv4SystemConfiguration : -target Linux_NFSv4SystemSetting -eq -cmd egrep "^/.*" /etc/exports | wc -l
+Linux_NFSv4SystemSetting : -target Linux_NFSv4SystemConfiguration -eq 1
+
