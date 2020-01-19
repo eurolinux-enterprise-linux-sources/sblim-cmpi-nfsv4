@@ -3,7 +3,7 @@
 Name:           sblim-cmpi-nfsv4
 Summary:        SBLIM nfsv4 instrumentation
 Version:        1.1.0
-Release:        10%{?dist}
+Release:        8%{?dist}
 License:        EPL
 Group:          Applications/System
 URL:            http://sourceforge.net/projects/sblim/
@@ -116,12 +116,6 @@ fi
 %postun -p /sbin/ldconfig
 
 %changelog
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.1.0-10
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.0-9
-- Mass rebuild 2013-12-27
-
 * Wed Aug 14 2013 Vitezslav Crhonek <vcrhonek@redhat.com> - 1.1.0-8
 - Use Pegasus root/interop instead of root/PG_Interop
 
