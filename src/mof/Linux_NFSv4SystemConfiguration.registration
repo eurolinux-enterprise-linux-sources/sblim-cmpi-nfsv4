@@ -1,0 +1,3 @@
+# Classname Namespace Providername Libraryname Capabilities ...
+Linux_NFSv4SystemConfiguration root/cimv2 Linux_NFSv4SystemConfiguration Linux_NFSv4SystemConfiguration instance
+Linux_NFSv4SettingContext root/cimv2 Linux_NFSv4SettingContext Linux_NFSv4SettingContext instance association

@@ -1,0 +1,10 @@
+# a comment
+#
+/export1	()
+/export2	(pseudo=/foo)
+/export3	(pseudo=/foo,rw)
+/usr/local	(pseudo=/goo/dir1,ro)
+/usr/share	(pseudo=/goo/dir2,sec=dh:lkeyi)
+/usr/man	(pseudo=/goo/dir3,rw,sec=sys)
+/usr/doc	(pseudo=/goo/dir4,rw,sec=sys:krb5:krb5i:spkm3)
+
